@@ -8,8 +8,8 @@ async def message_callback(room: MatrixRoom, event: RoomMessageText) -> None:
         f"{room.user_name(event.sender)} | {event.body}"
     )
     if event.body =='Hallo':
-        client = AsyncClient("https://matrix.org", "mehdimansouri1")
-        await client.login("Taghi1993!")
+        client = AsyncClient("https://matrix.org", "YOUR_USER_NAME")
+        await client.login("YOUR_PASSWORD")
         await client.room_send(
             room_id="!WJXwnykPWOjPqKlXwd:matrix.org",
             message_type="m.room.message",
@@ -17,9 +17,9 @@ async def message_callback(room: MatrixRoom, event: RoomMessageText) -> None:
         )
 
 async def main() -> None:
-    client = AsyncClient("https://matrix.org", "mehdimansouri1")
+    client = AsyncClient("https://matrix.org", "YOUR_USER_NAME")
     client.add_event_callback(message_callback, RoomMessageText)
-    print(await client.login("Taghi1993!"))
+    print(await client.login("YOUR_PASSWORD"))
     # "Logged in as @alice:example.org device id: RANDOMDID"
     # If you made a new room and haven't joined as that user, you can use
     # await client.join("your-room-id")
