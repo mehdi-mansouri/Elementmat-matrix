@@ -8,7 +8,7 @@ async def message_callback(room: MatrixRoom, event: RoomMessageText) -> None:
         f"{room.user_name(event.sender)} | {event.body}"
     )
     if event.body =='Hallo':
-        client = AsyncClient("https://matrix.org", "mehdimansouri1")
+        client = AsyncClient("https://matrix.org", "USER_NAME")
         await client.login("Taghi1993!")
         await client.room_send(
             room_id="!WJXwnykPWOjPqKlXwd:matrix.org",
