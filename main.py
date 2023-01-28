@@ -25,5 +25,5 @@ async def main() -> None:
     # await client.join("your-room-id")
 
    
-    await client.sync_forever(timeout=3000000)  # milliseconds
+    await client.sync_forever(timeout=300000)  # milliseconds
 asyncio.get_event_loop().run_until_complete(main())
